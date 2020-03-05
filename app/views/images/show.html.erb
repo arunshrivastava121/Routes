@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image name:</strong>
+  <%= @image.image_name %>
+</p>
+
+<p>
+  <strong>Image size:</strong>
+  <%= @image.image_size %>
+</p>
+<%= link_to 'image_link url', search_image_images_url(name: @image['image_name'], size: @image['image_size']) %><br>
+<%= link_to 'image_link path', search_image_images_path(name: @image['image_name'], size: @image['image_size']) %>
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>
