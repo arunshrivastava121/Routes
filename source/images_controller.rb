@@ -44,16 +44,13 @@ class ImagesController < ApplicationController
   # PATCH/PUT /images/1
   # PATCH/PUT /images/1.json
   def update
-    respond_to do |format|
       if @image.update(image_params)
-        format.html { redirect_to @image, notice: 'Image was successfully updated.' }
-        format.json { render :show, status: :ok, location: @image }
+        render file: "#{Rails.root}/public/404.html", layout: false
       else
         format.html { render :edit }
         format.json { render json: @image.errors, status: :unprocessable_entity }
       end
     end
-  end
 
   # DELETE /images/1
   # DELETE /images/1.json

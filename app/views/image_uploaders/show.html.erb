@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @image_uploader.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @image_uploader.email %>
+</p>
+
+<p>
+  <strong>Avtar:</strong>
+  <%= @image_uploader.avtar %>
+</p>
+
+<%= link_to 'Edit', edit_image_uploader_path(@image_uploader) %> |
+<%= link_to 'Back', image_uploaders_path %>

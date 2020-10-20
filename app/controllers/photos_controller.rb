@@ -17,6 +17,9 @@ class PhotosController < ApplicationController
     @photo = Photo.new
   end
   
+  def  without_member 
+  @photos = Photo.all
+  end
   def preview
     @photo = Photo.first
   end
