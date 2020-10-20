@@ -29,19 +29,19 @@ class PhotosController < ApplicationController
 
   # POST /photos
   # POST /photos.json
-  def create
-    @photo = Photo.new(photo_params)
+  # def create
+  #   @photo = Photo.new(photo_params)
 
-    respond_to do |format|
-      if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        format.json { render :show, status: :created, location: @photo }
-      else
-        format.html { render :new }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @photo.save
+  #       format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
+  #       format.json { render :show, status: :created, location: @photo }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @photo.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /photos/1
   # PATCH/PUT /photos/1.json
