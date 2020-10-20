@@ -9,6 +9,10 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  
+  # Store files locally.
+  config.active_storage.service = :local
+  
   # Show full error reports.
   config.consider_all_requests_local = true
 
@@ -32,9 +36,9 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.perform_caching = false
+  config.action_mailer.perform_caching = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -45,6 +49,8 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
+  config.action_mailer.delivery_method = :smtp
+  host = 'localhost:3000' #replace with your own url
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
@@ -53,6 +59,8 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  host = 'localhost:1025'
+config.action_mailer.default_url_options = { :host => 'localhost:1025', protocol: 'http' }
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
 
